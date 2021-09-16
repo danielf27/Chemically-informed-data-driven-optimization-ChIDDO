@@ -320,7 +320,6 @@ class acquisition():
     
     ## ours = MRB
     def ours(self, regressor, X_grid, X_known, y_known, n_instances, params, LB, UB):
-        # acq, X_pool, X_known, y_known, query_number, params, ob_name
         
         # Create an array where we're going to put the chosen X, X_new
         dims = X_known.shape[1]
@@ -337,7 +336,6 @@ class acquisition():
                 for col in range(dims):
                     x0[col] = np.random.uniform(LB[col]+0.001, UB[col]-0.001)
                 res = minimize(max_score_ours, x0, args= (X_known, y_known, X_grid, regressor, params), method='Powell',bounds = bnds)
-        #             lsq = least_squares(max_score_ours, x0, args = (X_known, y_known, X_grid, regressor, params), bounds =(LB,UB))
                 best_options[k] = res.x
                 best_scores[k] = res.fun
             
@@ -363,8 +361,6 @@ class acquisition():
         return X_new, dims
 
     def PI(self, regressor, X_grid, X_known, y_known, n_instances, params, LB, UB):
-        # self, regressor, X_grid, X_known, y_known, n_instances, params, LB, UB
-        # Create an array where we're going to put the chosen X, X_new
         dims = X_known.shape[1]
         tradeoff = params
         X_new = np.empty((0,dims))
@@ -404,7 +400,6 @@ class acquisition():
         return X_new, dims
     
     def EI(self, regressor, X_grid, X_known, y_known, n_instances, params, LB, UB):
-        # Create an array where we're going to put the chosen X, X_new
         dims = X_known.shape[1]
         tradeoff = params
         X_new = np.empty((0,dims))
@@ -444,8 +439,6 @@ class acquisition():
         return X_new, dims
     
     def UCB(self, regressor, X_grid, X_known, y_known, n_instances, params, LB, UB):
-        # self, regressor, X_grid, X_known, y_known, n_instances, params, LB, UB
-        # Create an array where we're going to put the chosen X, X_new
         dims = X_known.shape[1]
         tradeoff = params
         X_new = np.empty((0,dims))
