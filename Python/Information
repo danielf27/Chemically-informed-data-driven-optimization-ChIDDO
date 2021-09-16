@@ -1,0 +1,4 @@
+This folder contains python files for testing the BO algorithms on the benchmarking functions. 
+
+There is a directory for testing functions without noise, a directory for testing functions with noise, and 
+a directory for testing function in which the physics model doesn't match the experimental functions.
