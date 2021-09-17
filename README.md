@@ -10,3 +10,6 @@ Each of the python files takes as input the two .csv files, "Alg_test.csv" and "
 
 ## Using MATLAB files
 MATLAB is being used as a more efficient way of solving electrochemical physics model systems. "Bayes_opt_auto.m" is the main script that will be run. The other functions in the MATLAB directory are auxillary functions that will be used in "Bayes_opt_auto.m". For this file, the parameters of the optimization are modified at the top of the script. The code will output files of the experimental points and a graph showing the most optimal experimental vs. number of experiments.
+
+
+[![DOI](https://zenodo.org/badge/407197060.svg)](https://zenodo.org/badge/latestdoi/407197060)
